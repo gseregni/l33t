@@ -1,0 +1,25 @@
+<script src="//unpkg.com/alpinejs" defer></script>
+<script src="//unpkg.com/socket.io-client" defer></script>
+
+<div x-data="{ open: false }">
+    <button @click="open = true">Expand</button>
+ 
+    <span x-show="open">
+        Content...
+    </span>
+
+    <script>
+        document.addEventListener('alpine:init', () => {
+            console.log("..")
+            Alpine.directive('log', (el, { expression }, { evaluate }) => {
+                    // expression === 'message'
+                
+                    console.log(
+                        evaluate(expression)
+                    )
+                })
+        })
+    </script>
+
+
+</div>

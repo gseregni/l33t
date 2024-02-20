@@ -1,6 +1,7 @@
 import {program} from 'commander';
 import chalk from 'chalk';
-
+import { URL } from 'url';
+import mongo from 'mongodb';
 
 program
   .option('--first')
@@ -24,6 +25,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/boss', (req, res) => {
+  
+
+const __filename = new URL('', import.meta.url).pathname;
+const __dirname = new URL('.', import.meta.url).pathname;
   res.sendFile(__dirname + '/boss/index.html');
 });
 
