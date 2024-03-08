@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Viewer</title>
+    <meta charset="UTF-8" />
+    <link href="/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <video playsinline autoplay muted></video>
+    <button id="enable-audio">Enable audio</button>
+    <script src="/socket.io/socket.io.js"></script>
+
+
+    <script>
+
+let peerConnection;
+const config = {
+  iceServers: [
+      { 
+        "urls": "stun:stun.l.google.com:19302",
+      },
+      // { 
+      //   "urls": "turn:TURN_IP?transport=tcp",
+      //   "username": "TURN_USERNAME",
+      //   "credential": "TURN_CREDENTIALS"
+      // }
+  ]
+};
+
+const socket = io.connect(window.location.origin);
+const video = document.querySelector("video");
+const enableAudioButton = document.querySelector("#enable-audio");
+
+var room = "5"
+
+enableAudioButton.addEventListener("click", enableAudio)
+
+
+socket.on("connection", (socket) => {
+  socket.join("some room");
+});
+
+
+socket.on("offer", (id, description) => {
+  peerConnection = new RTCPeerConnection(config);
+  peerConnection
+    .setRemoteDescription(description)
+    .then(() => peerConnection.createAnswer())
+    .then(sdp => peerConnection.setLocalDescription(sdp))
+    .then(() => {
+      socket.emit("answer", id, peerConnection.localDescription);
+    });
+  peerConnection.ontrack = event => {
+    video.srcObject = event.streams[0];
+  };
+  peerConnection.onicecandidate = event => {
+    if (event.candidate) {
+      socket.emit("candidate", id, event.candidate);
+    }
+  };
+});
+
+
+socket.on("candidate", (id, candidate) => {
+  peerConnection
+    .addIceCandidate(new RTCIceCandidate(candidate))
+    .catch(e => console.error(e));
+});
+
+socket.on("connect", () => {
+  //socket.join(room)
+  console.log("SOCKET ", socket)
+  socket.emit("watcher", room);
+});
+
+socket.on("broadcaster", (x) => {
+  if (x == room)
+  socket.emit("watcher");
+});
+
+window.onunload = window.onbeforeunload = () => {
+  socket.close();
+  peerConnection.close();
+};
+
+function enableAudio() {
+  console.log("Enabling audio")
+  video.muted = false;
+}
+
+
+    </script>
+
+    </body>
+</html>

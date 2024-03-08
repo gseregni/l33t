@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script src="https://cdn.socket.io/4.5.4/socket.io.min.js" integrity="sha384-/KNQL8Nu5gCHLqwqfQjA689Hhoqgi2S84SNUxC3roTe4EhJ9AfLkp8QiQcU8AMzI" crossorigin="anonymous"></script>
+    </head>
+    
+    
+    
+    <body>
+        
+        <template id="message">
+            <div class="message">Hello, world!</div>
+        </template>
+
+        <script>
+
+            const socket = io.connect(window.location.origin);
+
+            socket.on("plc_read", vs => {
+
+                let vars = JSON.parse(vs)
+                vars.forEach(v => {
+                    let m = message.content.cloneNode(true)
+                m.querySelector("div").textContent = v.name + " " + v.address + " : " + v.value
+                document.body.appendChild(m)
+
+                });
+               
+            })
+
+
+
+        </script>
+    </body>
+</html>

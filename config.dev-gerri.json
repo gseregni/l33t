@@ -1,0 +1,793 @@
+{
+  "plcs": [
+    {
+      "id": "VIDALI",
+      "driver": "OMRON_ETHIP",
+      "logerLevel" : "debug",
+      "options": {
+        "host": "192.168.30.80",
+        "port": 0
+      },
+      "variables": [
+        {
+          "address": "hmi_auto_larghezza_loc",  
+          "type": "SHORT"
+        }
+      ]
+    },
+
+    {
+      "id": "VALMEC1",
+      "driver": "DELTA",
+      "logerLevel" : "warn",
+      "options": {
+        "host": "192.168.30.160",
+        "port": 502
+      },
+      "variables": [
+        {
+          
+          "address": "M0",  
+          "type": "BOOL"
+          
+        },
+        {
+          
+          "address": "M513",  
+          "type": "BOOL"
+         
+        },
+        {
+          
+          "address": "M514",  
+          "type": "BOOL"
+          
+        },
+        {
+          "address": "D420",  
+          "type": "SHORT"
+    
+        
+        }
+      ]
+    },
+    {
+      "id": "VALMEC2",
+      "driver": "DELTA",
+      "logerLevel" : "warn",
+      "options": {
+        "host": "192.168.30.161",
+        "port": 502
+      },
+      "variables": [
+        {
+          
+          "address": "M515",  
+          "type": "BOOL"
+          
+        },
+        {
+          
+          "address": "M513",  
+          "type": "BOOL"
+         
+        }
+      ]
+    },
+    {
+      "id": "VALMEC3",
+      "driver": "DELTA",
+      "logerLevel" : "warn",
+      "options": {
+        "host": "192.168.30.162",
+        "port": 502
+      },
+      "variables": [
+        {
+          
+          "address": "M513",  
+          "type": "BOOL"
+          
+        },
+        {
+          
+          "address": "M514",  
+          "type": "BOOL"
+         
+        }
+      ]
+    },
+    {
+      "id": "VALMEC4",
+      "driver": "DELTA",
+      "logerLevel" : "warn",
+      "options": {
+        "host": "192.168.30.163",
+        "port": 502
+      },
+      "variables": [
+        {
+          
+          "address": "M513",  
+          "type": "BOOL"
+          
+        },
+        {
+          
+          "address": "M514",  
+          "type": "BOOL"
+         
+        },
+        {
+          "address": "M515",  
+          "type": "BOOL"
+        }
+      ]
+    },
+    {
+      "id": "VALMEC5",
+      "driver": "DELTA",
+      "logerLevel" : "warn",
+      "options": {
+        "host": "192.168.30.164",
+        "port": 502
+      },
+      "variables": [
+        {
+          "address": "M513",  
+          "type": "BOOL"
+        },
+        {
+          "address": "M515",  
+          "type": "BOOL"
+        },
+        {
+          "address": "M516",  
+          "type": "BOOL"
+        }
+      ]
+    },
+    {
+      "id": "ASPIRAZIONE",
+      "driver": "ADS",
+      "logerLevel" : "warn",
+      "options": {
+        "host": "192.168.30.150",
+        "amsNetIdTarget": "5.75.155.208.1.1",
+        "amsNetIdSource": "192.168.30.152.1.1",
+        "amsPortTarget": 851
+
+        
+      },
+      "variables": [
+
+        {
+          "address": "MAIN.RD_Levigatrice_Serranda_1",
+          "type": "BOOL"
+        },
+        {
+          "address": "MAIN.RD_Levigatrice_Serranda_2",
+          "type": "BOOL"
+        },
+        {
+          "address": "MAIN.RD_Levigatrice_Serranda_3",
+          "type": "BOOL"
+        },
+        {
+          "address": "MAIN.RD_Levigatrice_Serranda_4",
+          "type": "BOOL"
+        },
+        {
+          "address": "MAIN.RD_Levigatrice_Serranda_5",
+          "type": "BOOL"
+        },
+        {
+          "address": "MAIN.RD_Levigatrice_Serranda_6",
+          "type": "BOOL"
+        }
+      ]
+    },
+
+    {
+      "id": "ZONA3",
+      "driver": "ADS",
+      "logerLevel" : "warn",
+      "options": {
+        "host": "192.168.30.167",
+        "amsNetIdTarget": "5.97.150.92.1.1",
+        "amsNetIdSource": "192.168.30.152.1.1",
+        "amsPortTarget": 851
+      },
+      "variables": [
+     
+        {"address": "RULLIERA.Comandi_Manuali.Cmd_CatenaLunga", "type": "INTEGER"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[1]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[2]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[3]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[4]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[5]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[6]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[7]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[8]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[9]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[10]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[11]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[12]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[13]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[14]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[15]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[16]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[17]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[18]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[19]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[20]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[21]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[22]", "type": "BOOL"},
+        {"address": "RULLIERA.Comandi_Manuali.Seleziona_CatenaLunga_Per_Cmd_Jog[23]", "type": "BOOL"},
+
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[1]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[2]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[3]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[4]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[5]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[6]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[7]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[8]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[9]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[10]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[11]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[12]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[13]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[14]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[15]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[16]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[17]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[18]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[19]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[20]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[21]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[22]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[23]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[1]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[2]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[3]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[4]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[5]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[6]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[7]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[8]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[9]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[10]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[11]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[12]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[13]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[14]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[15]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[16]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[17]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[18]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[19]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[20]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[21]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[22]", "type": "BOOL"},
+        {"address": "EXCHANGE_HMI.Salita_Cilindri[23]", "type": "BOOL"},
+        {
+          "address": "RULLIERA.CMD_Reset_Allarmi",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[1]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[2]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[3]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[3]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[4]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[5]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[6]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[7]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[8]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[9]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[10]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[11]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[12]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[13]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[14]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[15]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[16]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[17]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[18]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[19]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[20]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[21]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[22]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Scarico_Ftc[23]",
+          "type": "BOOL"
+        },
+
+
+
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[1]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[2]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[3]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[3]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[4]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[5]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[6]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[7]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[8]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[9]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[10]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[11]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[12]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[13]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[14]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[15]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[16]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[17]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[18]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[19]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[20]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[21]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[22]",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Allineamento_Ftc[23]",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLIERA.CMD_Reset_Allarmi",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.bAllarme",
+          "type": "ARRAY_OF_BOOL",
+          "size": "1000"
+        },
+        {
+          "address": "EXCHANGE_HMI.Start_Rulliera_Auto",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Modo_Automatico",
+          "type": "BOOL"
+        },
+        {
+          "address": "GVL_Persistent_Var.sSrc_1",
+          "type": "STRING"
+        },
+        {
+          "address": "GVL_Persistent_Var.sSrc_2",
+          "type": "STRING"
+        },
+        {
+          "address": "GVL_Persistent_Var.sSrc_3",
+          "type": "STRING"
+        },
+        {
+          "address": "GVL_Persistent_Var.sSrc_4",
+          "type": "STRING"
+        },
+        {
+          "address": "EXCHANGE_HMI.Vidali_Vel",
+          "type": "FLOAT"
+        },
+        {
+          "address": "EXCHANGE_HMI.Altezza_Attuale_Ftc",
+          "type": "FLOAT"
+        },
+        {
+          "address": "Rulliera.CMD_Scarica_Rulliera_Passo_Ciclo_SemiAuto",
+          "type": "BOOL"
+        },
+        {
+          "address": "Rulliera.CMD_Scarica_SoloCatenaria_NBox",
+          "type": "INTEGER"
+        },
+        {
+          "address": "Rulliera.Direzione_Scarica_SoloCatenaria_Imp",
+          "type": "INTEGER"
+        },
+        {
+          "address": "Rulliera.CMD_Scarica_SoloCatenaria_Imp",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.R4_Jog_Bw",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.R4_Jog_Fw",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.R5_Jog_Bw",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.R5_Jog_Fw",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.R6_Jog_Bw",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.R6_Jog_Fw",
+          "type": "BOOL"
+        },
+        {
+          "address": "EXCHANGE_HMI.Rulliera_In_Ciclo",
+          "type": "BOOL"
+        },
+        {
+          "address": "Rulliera.CMD_Scarica_SoloCatenaria_Prima_Catena_Corta",
+          "type": "INTEGER"
+        },
+        {
+          "address": "Rulliera.CMD_Scarica_SoloCatenaria_Ultima_Catena_Corta",
+          "type": "INTEGER"
+        },
+        {
+          "address": "EXCHANGE_HMI.bAllarme_Attivo",
+          "type": "BOOL"
+        }
+      ]
+    },
+
+    {
+      "id": "RULLIERA",
+      "driver": "ADS",
+      "logerLevel" : "warn",
+      "options": {
+        "host": "192.168.30.180",
+        "amsNetIdTarget": "192.168.30.180.1.1",
+        "amsNetIdSource": "192.168.30.152.1.1",
+        "amsPortTarget": 851
+      },
+      "variables": [
+        {
+            "address": "RULLI_CENTRO_TAGLI.RD_Levigatrice_Act_Speed",
+            "type": "FLOAT"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Pls_Start_Pulizia_Hdd",
+          "type": "BOOL"
+        },
+        {
+          "address": ".PB_Start_Svuotamento_Hundegger",
+          "type": "BOOL"
+        },
+         {
+          "address": "RULLI_CENTRO_TAGLI.M_Auto_Cycle_Run_Zona_1",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Zona_1_Semaforo_Verde",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Zona_1_Semaforo_Arancione",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Sel_Auto",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Pls_Start_Ciclo",
+          "type": "BOOL"
+        },
+         {
+          "address": "RULLI_CENTRO_TAGLI.M_Auto_Cycle_Run_Zona_2",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Zona_2_Semaforo_Verde",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Zona_2_Semaforo_Arancione",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Zona_2_Semaforo_Rosso",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Sel_Auto_Zona_2",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Pls_Start_Ciclo_Zona_2",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Zona_2_Lato_R3_Semaforo_Verde",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Zona_2_Lato_R3_Semaforo_Arancione",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Zona_2_Lato_R3_Semaforo_Rosso",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Zona_2_Lato_R3_Semaforo_Blu",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.RD_Presenza_Pz_Da_Hundegger",
+          "type": "BOOL"
+        },
+        
+        {
+          "address": "GVL_FB_Scarico_Man_Operatore.PLS_Scarica_Hundegger_C1",
+          "type": "BOOL"
+        },
+        
+        {
+          "address": "RULLI_CENTRO_TAGLI.RD_Larghezza_Pz_Da_Hundegger",
+          "type": "BOOL"
+        },
+        
+        {
+          "address": "GVL_FB_Scarico_Man_Operatore.Sel_Automatico",
+          "type": "BOOL"
+        },
+        
+        {
+          "address": "GVL_FB_Scarico_Man_Operatore.PLS_Scarica_C1_C2",
+          "type": "BOOL"
+        },
+        {
+          "address": "GVL_FB_Scarico_Man_Operatore.PLS_Scarica_C1_C2_Modo_Pareti",
+          "type": "BOOL"
+        },
+        {
+          "address": "GVL_FB_Scarico_Man_Operatore.PLS_Scarica_C2_R1",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.C3_Act_Pezzi_Buffer",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Zona_2_Semaforo_Blu_On",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Zona_2_Semaforo_Blu",
+          "type": "BOOL"
+        },
+        {
+          "address": ".Sel_C4_Ciclo_Polmone_Distanziato",
+          "type": "BOOL"
+        },
+        {
+          "address": ".Sel_C4_Ciclo_Polmone_Compatto",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.C5_Act_Pezzi_Buffer",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.C6_Act_Pezzi_Buffer",
+          "type": "INTEGER"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.R1_Act_Pezzi_Buffer",
+          "type": "INTEGER"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Zona_1_Semaforo_Blu_On",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Zona_1_Semaforo_Blu",
+          "type": "BOOL"
+        },
+        {
+          "address": ".Sel_R1_En_Out_Manuale",
+          "type": "BOOL"
+        },
+        {
+          "address": ".Sel_R1_In_Out_Sx",
+          "type": "BOOL"
+        },
+        {
+          "address": ".Sel_R1_In_Out_Dx",
+          "type": "BOOL"
+        },
+        {
+          "address": ".Sel_R1_En_Carico_Manuale",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.R2_Act_Pezzi_Buffer",
+          "type": "INTEGER"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.R3_Act_Pezzi_Buffer",
+          "type": "INTEGER"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Zona_2_Lato_R3_Semaforo_Blu_On",
+          "type": "BOOL"
+        },
+        {
+          "address": "RULLI_CENTRO_TAGLI.Pls_Rst_Pezzi_Valmec",
+          "type": "BOOL"
+        },
+        {
+          "address": ".PB_R3_Scarico_Done",
+          "type": "BOOL"
+        },
+        {
+          "address": ".Sel_Req_R3_Carico_Man_Pezzo",
+          "type": "BOOL"
+        },
+        {
+          "address": ".Sel_R3_In_Out",
+          "type": "BOOL"
+        },
+        {
+          "address": ".Sel_R3_En_Out_Manuale",
+          "type": "BOOL"
+        },
+        {
+          "address": ".Sel_R3_On_Fisso",
+          "type": "BOOL"
+        },
+        {
+          "address": ".Set_Pezzi_Valmec",
+          "type": "INTEGER"
+        },
+        {
+          "address": ".Sel_R3_Carico_Continuo",
+          "type": "BOOL"
+        }
+      ]
+    }
+
+  ],
+  "webrtc": {}
+}

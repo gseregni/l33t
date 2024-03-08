@@ -1,0 +1,162 @@
+<html>
+<head>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/alpinejs" type="module" ></script>
+
+
+  <script type="module">
+
+import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
+
+export function wss() {
+    return xx
+}
+    var xx  = {
+        count: 0,
+        variables: [],
+        getHandle(name) {
+            var h = this.variables.find(v => v.name == name)
+            if (!h) {
+                h = {
+                    name: name
+                }
+                this.variables.push(h)
+            }
+            return h
+        },
+        async start(data) {
+            
+            this.variables = data
+            const config = {}
+              
+            const socket = await io("http://192.168.30.153:1337")
+            
+            socket.on("plc_read", (message) => {
+                var vs = JSON.parse(message)
+                for (var x = 0; x < vs.length; x++) {
+                    var v = vs[x]
+                    let h = this.getHandle(v.name)
+                    h.plc = v.plc
+                    h.value = v.value
+                }
+            })
+            
+            socket.on("connect", () => {
+                socket.emit("plc_subscriber",socket.id, "RULLIERA")
+                socket.emit("plc_subscriber",socket.id, "ZONA3")
+                socket.emit("plc_subscriber",socket.id, "ASPIRAZIONE")
+                socket.emit("plc_subscriber",socket.id, "VALMEC1")
+                socket.emit("plc_subscriber",socket.id, "VALMEC2")
+                socket.emit("plc_subscriber",socket.id, "VALMEC3")
+                socket.emit("plc_subscriber",socket.id, "VALMEC4")
+                socket.emit("plc_subscriber",socket.id, "VALMEC5")
+            });
+
+        }
+
+    }
+
+
+  </script>
+    
+  <script type="module">
+
+    // import Alpine from "./node_modules/alpinejs/dist/module.esm.js"
+    import { wss } from "./wss.js"
+
+    Alpine.data('wss', () => {
+
+    return {
+        data : [],
+        search: "",
+        init() {
+          var axx = wss()
+          axx.start(this.data)
+          // axx.addE
+          axx.addEventListener((h) => {
+            var d = this.data.find(x => x.name == h.name)
+            if (d) {
+              console.log("d", d.value, h.value)
+            } else
+              this.data = this.data.concat(h)
+          })
+
+          // setInterval(x => {
+          //   console.log("jjj")
+          // },1000)
+        },
+        get title() {
+          return "title";
+        }
+      };
+    });
+
+    Alpine.start()
+
+        
+
+  </script>
+
+  <style>
+
+    :root {
+      --bs-primary : var(--bs-indigo);
+    }
+
+    .bg-primary {
+      background-color:  var(--bs-primary) !important;
+    }
+  </style>
+ </head>
+
+
+<body x-data="wss">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">0000</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container-fluid mt-5">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="card ">
+          <div class="card-header bg-primary text-white">Variabili</div>
+          <div class="card-header text-white">
+            <input class="form-control"  x-model="search">
+          </div>
+          <div class="card-body">
+            <table class="table table-responsive">
+              <template x-for="v in data">
+                <tr x-show="v.name.toLowerCase().indexOf(search) != -1">
+                  <td x-text="v.name">
+                  </td>
+                  <td x-text="v.value" ></td>
+                </tr>
+              </template>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="card bg-primary">
+          <div class="card-header">PLC</div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+</body>
+
+
+</html>
